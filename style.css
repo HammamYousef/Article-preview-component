@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+:root {
+  --very-dark-grayish-blue: #48556a;
+  --desaturated-dark-blue: #6d7f97;
+  --grayish-blue: #9eafc2;
+  --light-grayish-blue: #ecf2f8;
+}
+
+.manrope-500 {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.manrope-700 {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 13px;
+  background-color: var(--light-grayish-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 5rem 1.5rem;
+  overflow: hidden;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px;
+  width: 42rem;
+  box-shadow: 0 10px 30px 0 rgba(72, 85, 106, 0.15);
+  position: relative;
+}
+
+.card-image {
+  background-image: url(./images/drawers.jpg);
+  background-size: cover;
+  background-position: left;
+  border-radius: 10px 0 0 10px;
+  min-width: 16.2rem;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1.8rem 2rem;
+  gap: 1rem;
+}
+
+.card-content-title {
+  color: var(--very-dark-grayish-blue);
+}
+
+.card-content-paragrapgh {
+  color: var(--desaturated-dark-blue);
+}
+
+.card-content-attribution {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.author-name {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.author-name-text {
+  color: var(--very-dark-grayish-blue);
+}
+
+.author-date {
+  color: var(--grayish-blue);
+}
+
+.share-button {
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+  background-color: var(--light-grayish-blue);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 15;
+
+  ion-icon {
+    color: var(--desaturated-dark-blue);
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+}
+
+.share-button:hover,
+.share-button.active {
+  background-color: var(--desaturated-dark-blue);
+
+  ion-icon {
+    color: white;
+  }
+}
+
+.card-links {
+  position: absolute;
+  background-color: var(--very-dark-grayish-blue);
+  display: flex;
+  padding: 1rem 2rem;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  right: -78px;
+  bottom: 85px;
+  transform: translateX(-50%);
+  z-index: 10;
+  box-shadow: 0 8px 24px rgba(72, 85, 106, 0.2);
+}
+
+.card-links p {
+  color: var(--grayish-blue);
+  letter-spacing: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.card-links img:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.arrow {
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid var(--very-dark-grayish-blue);
+  background: none;
+  z-index: 101;
+}
+
+.hidden {
+  display: none;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: absolute;
+  bottom: 1rem;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    padding: 0 1.5rem;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 350px;
+    flex-direction: column;
+  }
+
+  .card-image {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 13.5rem;
+    background-position: top;
+  }
+
+  .card-content {
+    padding: 2rem 2rem 1.2rem 2rem;
+  }
+
+  .card-content-title {
+    font-size: 1rem;
+  }
+
+  .card-content-paragrapgh {
+    font-size: 0.83rem;
+    line-height: 1.25rem;
+  }
+
+  .card-content-attribution {
+    margin-top: 1rem;
+  }
+
+  .card-links {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    transform: none;
+    justify-content: flex-start;
+    height: 4.5rem;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .card-links p {
+    letter-spacing: 0.4rem;
+    font-size: 0.7rem;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .share-button {
+    margin-top: 0.5rem;
+  }
+}
